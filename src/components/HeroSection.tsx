@@ -11,6 +11,19 @@ export const HeroSection = () => {
   ];
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+      {/* Leader background (desktop only) */}
+      <div className="absolute inset-0 pointer-events-none hidden lg:block">
+        <img
+          src="/images/leader.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute bottom-0 left-0 w-full max-w-[620px] h-[85vh] object-contain object-bottom xl:max-w-[720px]"
+        />
+
+        {/* Fade overlay กันภาพชนกับข้อความ */}
+        <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/70 to-transparent" />
+      </div>
+
       {/* Background with geometric shapes */}
       <div className="absolute inset-0 bg-gradient-to-b from-dark to-dark/80 overflow-hidden">
         {/* Geometric W-shape decoration */}

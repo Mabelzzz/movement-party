@@ -3,12 +3,14 @@ import { User } from "lucide-react";
 import { PageIntro } from "@/components/PageIntro";
 
 const candidates = [
-  { rank: 1, name: "นางสาว ปุญชรัสมิ์ บุญมา", position: "หัวหน้าพรรค" },
-  { rank: 2, name: "นาย กุลพัสฐ์ พูลศิริวงศ์", position: "รองหัวหน้าพรรค" },
-  { rank: 3, name: "นาย กชพล จิตต์มั่นการ", position: "เลขาธิการพรรค" },
-  { rank: 4, name: "นาย ณัฎฐพัชษ์ เตย์ชะจิรายุส", position: "เหรัญญิกพรรค" },
-  { rank: 5, name: "นางสาว ภัทรานิษฐ์ พณิชธนันต์ชัย", position: "นายทะเบียนสมาชิกพรรค" },
-  { rank: 6, name: "นาย ภาคภูมิ คะเชสนันท์", position: "โฆษกพรรค" },
+  { rank: 1, name: "นายกัณวีร์ สืบแสง", position: "หัวหน้าพรรค", imageSrc: "/images/executives/kanavee.jpg" },
+  { rank: 2, name: "นายสุรพันธ์ กุศลส่ง", position: "รองหัวหน้าพรรค" },
+  { rank: 3, name: "นายกุลพัสฐ์ พูลศิริวงศ์", position: "รองหัวหน้าพรรค" },
+  { rank: 4, name: "นายสรยุทธ ชูพันธุ์", position: "เลขาธิการพรรค" },
+  { rank: 5, name: "นายกชพล จิตต์มั่นการ", position: "เลขาธิการพรรค" },
+  { rank: 6, name: "นายณัฎฐพัชษ์ เตย์ชะจิรายุส", position: "เหรัญญิกพรรค" },
+  { rank: 7, name: "นางสาว ภัทรานิษฐ์ พณิชธนันต์ชัย", position: "นายทะเบียนสมาชิกพรรค", },
+  { rank: 8, name: "ม.ล.กุลธร เกษมศรี", position: "โฆษกพรรค" },
 ];
 
 const PartyList = () => {
@@ -40,7 +42,16 @@ const PartyList = () => {
 
                 {/* Avatar */}
                 <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center shrink-0">
-                  <User className="w-8 h-8 text-primary/40" />
+                  {candidate.imageSrc ? (
+                    <img
+                      src={candidate.imageSrc}
+                      alt={candidate.name}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <User className="w-24 h-24 text-primary/30" />
+                  )}
                 </div>
 
                 {/* Info */}
