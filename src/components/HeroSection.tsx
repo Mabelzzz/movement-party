@@ -12,7 +12,7 @@ export const HeroSection = () => {
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
       {/* Leader background (desktop only) */}
-      <div className="absolute inset-0 pointer-events-none hidden lg:block">
+      <div className="absolute inset-0 pointer-events-none opacity-5 sm:opacity-10 md:opacity-20 lg:opacity-40 xl:opacity-100">
         <img
           src="/images/leader.png"
           alt=""
@@ -101,20 +101,25 @@ export const HeroSection = () => {
 
           {/* Stats */}
           <div
-            className="grid gap-6 opacity-0 animate-fade-in grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center"
+            className="grid gap-6 opacity-70 animate-fade-in grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-items-center"
             style={{ animationDelay: "0.8s" }}
           >
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="w-full max-w-[320px] flex flex-col items-center p-6 rounded-2xl bg-card/5 backdrop-blur border border-primary/10 text-center"
+                className="w-full max-w-[260px] flex flex-col items-center p-6 rounded-2xl bg-primary-foreground border border-primary/10 text-center"
               >
                 <stat.icon className="w-8 h-8 text-primary mb-3" />
-                <span className="text-3xl font-bold text-foreground">{stat.value}</span>
-                <span className="text-sm text-muted-foreground">{stat.label}</span>
+                <span className="text-3xl font-bold text-foreground">
+                  {stat.value}
+                </span>
+                <span className="text-sm text-muted-foreground">
+                  {stat.label}
+                </span>
               </div>
             ))}
           </div>
+
 
         </div>
       </div>
