@@ -1,0 +1,269 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* พรรคพลวัตร Design System - Green Political Brand */
+
+@layer base {
+  :root {
+    /* Brand Colors */
+    --brand-green: 108 69% 48%;
+    --brand-green-light: 108 69% 58%;
+    --brand-green-dark: 108 69% 38%;
+
+    /* Core Theme */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 5%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5%;
+
+    --primary: 108 69% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 108 69% 95%;
+    --accent-foreground: 108 69% 30%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 108 69% 48%;
+
+    --radius: 0.5rem;
+
+    /* Custom Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(108 69% 48%) 0%, hsl(108 69% 35%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 8%) 0%, hsl(0, 3%, 13%) 100%);
+    --gradient-overlay: linear-gradient(135deg, hsl(108 69% 48% / 0.9) 0%, hsl(108 69% 30% / 0.8) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px hsl(0 0% 0% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 10px 25px -5px hsl(0 0% 0% / 0.15);
+    --shadow-green: 0 10px 40px -10px hsl(108 69% 48% / 0.4);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 20%;
+    --sidebar-primary: 108 69% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 108 69% 95%;
+    --sidebar-accent-foreground: 108 69% 30%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 108 69% 48%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(108 69% 40%) 0%, hsl(108 69% 25%) 100%);
+    /* --gradient-dark: linear-gradient(180deg, hsl(0, 17%, 98%) 0%, hsl(108 69% 40%) 100%); */
+    --gradient-dark: linear-gradient(180deg, hsl(0, 2%, 12%) 0%, hsl(108 69% 40%) 100%);
+  }
+
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 108 69% 50%;
+    --primary-foreground: 0 0% 5%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 108 69% 15%;
+    --accent-foreground: 108 69% 70%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 108 69% 50%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(108 69% 40%) 0%, hsl(108 69% 25%) 100%);
+    /* --gradient-dark: linear-gradient(180deg, hsl(0 0% 3%) 0%, hsl(0 0% 0%) 100%); */
+    --gradient-dark: linear-gradient(180deg, hsl(0, 17%, 98%) 0%, hsl(108 69% 40%) 100%);
+
+
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 108 69% 50%;
+    --sidebar-primary-foreground: 0 0% 5%;
+    --sidebar-accent: 108 69% 15%;
+    --sidebar-accent-foreground: 108 69% 70%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 108 69% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-thai antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Geometric Background Shapes */
+  .geometric-bg {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .geometric-bg::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 80%;
+    height: 200%;
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.08) 0%, transparent 60%);
+    transform: rotate(-15deg);
+    pointer-events: none;
+  }
+
+  .geometric-bg::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(-45deg, hsl(var(--primary) / 0.05) 0%, transparent 50%);
+    transform: rotate(20deg);
+    pointer-events: none;
+  }
+
+  /* W-Shape Decorative Element */
+  .w-shape {
+    position: relative;
+  }
+
+  .w-shape::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: hsl(var(--primary) / 0.1);
+    clip-path: polygon(0% 0%, 25% 100%, 50% 40%, 75% 100%, 100% 0%, 80% 0%, 50% 70%, 20% 0%);
+  }
+
+  /* Section Divider */
+  .section-divider {
+    position: relative;
+  }
+
+  .section-divider::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary)), transparent);
+  }
+
+  /* Campaign Card Style */
+  .campaign-card {
+    @apply relative overflow-hidden rounded-lg border bg-card transition-all duration-300;
+    box-shadow: var(--shadow-md);
+  }
+
+  .campaign-card:hover {
+    @apply border-primary;
+    box-shadow: var(--shadow-green);
+    transform: translateY(-4px);
+  }
+
+  /* Hero Overlay */
+  .hero-overlay {
+    background: var(--gradient-overlay);
+  }
+
+  /* Text Gradient */
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--brand-green-light)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Animated Underline */
+  .animated-underline {
+    position: relative;
+  }
+
+  .animated-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: hsl(var(--primary));
+    transition: width 0.3s ease;
+  }
+
+  .animated-underline:hover::after {
+    width: 100%;
+  }
+}
+
+@layer utilities {
+  /* Backdrop Blur Levels */
+  .glass {
+    @apply bg-background/80 backdrop-blur-lg;
+  }
+
+  .glass-dark {
+    @apply bg-background/60 backdrop-blur-xl;
+  }
+
+  /* Focus Ring */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background;
+  }
+
+  /* Smooth Transitions */
+  .transition-base {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  /* Hide Scrollbar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
