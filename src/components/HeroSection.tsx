@@ -18,7 +18,7 @@ export const HeroSection = () => {
           src="/images/leader.png"
           alt=""
           aria-hidden="true"
-          className="absolute bottom-0 left-0 xl:left-50 lg:left-20 w-full max-w-[620px] h-[85vh] object-contain object-left object-bottom xl:max-w-[720px]"
+          className="absolute bottom-0 left-0 xl:left-40 lg:left-20 w-full max-w-[620px] h-[85vh] object-contain object-left object-bottom xl:max-w-[720px]"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/70 to-transparent" />
       </div>
